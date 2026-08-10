@@ -34,21 +34,12 @@ export const metadata: Metadata = {
     title: `${site.brand} — ${site.tagline}`,
     description:
       "Pare de perder paciente por falta de uma página profissional. Criação e manutenção mensal de landing pages para clínicas odontológicas.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: site.brand,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.brand} — ${site.tagline}`,
     description:
       "Pare de perder paciente por falta de uma página profissional. Criação e manutenção mensal de landing pages para clínicas odontológicas.",
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -108,7 +99,6 @@ const jsonLd = [
     },
     description:
       "Produto da Octo Labs especializado em landing pages para clínicas odontológicas.",
-    email: site.email,
     telephone: `+${site.whatsapp.number}`,
     url: site.url,
     areaServed: "BR",

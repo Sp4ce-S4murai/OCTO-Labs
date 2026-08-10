@@ -39,7 +39,7 @@ Principais blocos do arquivo:
 
 | Export | O que controla |
 | --- | --- |
-| `site` | Marca, WhatsApp, e-mail e redes sociais |
+| `site` | Marca, WhatsApp e redes sociais |
 | `hero` | Headline, subheadline e CTAs do topo |
 | `painPoints` | Bullets de dor/problema |
 | `howItWorks` | Passos do "como funciona" |
@@ -93,6 +93,17 @@ não exige mudanças no formulário nem no restante do site.
 O projeto é um app Next.js padrão e pode ser publicado em qualquer
 plataforma compatível (ex.: Vercel). Antes de publicar, atualize:
 
-- `site.url` em `lib/content.ts` com o domínio final;
-- `public/og-image.png` com uma imagem de Open Graph real (1200×630);
-- os dados de contato, redes sociais e CNPJ em `lib/content.ts` e no rodapé.
+- `site.url` em `lib/content.ts` com o domínio final (hoje aponta para
+  `https://octo-labs.vercel.app`);
+- os dados de contato e redes sociais em `lib/content.ts`.
+
+### Imagem de Open Graph
+
+A imagem usada nos previews de compartilhamento (WhatsApp, Instagram,
+Twitter/X etc.) é gerada automaticamente pelo Next.js a partir de
+[`app/opengraph-image.tsx`](app/opengraph-image.tsx) e
+[`app/twitter-image.tsx`](app/twitter-image.tsx) (ambos reaproveitam o
+layout definido em [`lib/ogImage.tsx`](lib/ogImage.tsx)). Não é um arquivo
+estático — ela é renderizada sob demanda em `/opengraph-image` e sobe
+automaticamente a cada deploy, sem precisar subir nenhum PNG manualmente.
+Para mudar o visual do preview, edite `lib/ogImage.tsx`.

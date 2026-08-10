@@ -1,5 +1,5 @@
-import { Instagram, Linkedin, Mail } from "lucide-react";
-import { footer, site } from "@/lib/content";
+import { Instagram, Linkedin, MessageCircle } from "lucide-react";
+import { footer, site, whatsappLink } from "@/lib/content";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -20,9 +20,14 @@ export function Footer() {
             </h3>
             <ul className="mt-4 flex flex-col gap-2.5 text-sm text-petrol-100/80">
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-petrol-400" />
-                <a href={`mailto:${site.email}`} className="hover:text-white">
-                  {site.email}
+                <MessageCircle className="h-4 w-4 text-petrol-400" />
+                <a
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white"
+                >
+                  {site.whatsapp.displayNumber}
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -60,7 +65,6 @@ export function Footer() {
                   Política de privacidade
                 </a>
               </li>
-              <li className="text-petrol-100/60">{footer.legal}</li>
             </ul>
           </div>
         </div>

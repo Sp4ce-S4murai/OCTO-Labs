@@ -5,14 +5,13 @@ export const site = {
   brand: "Octo Páginas",
   parentBrand: "Octo Labs",
   tagline: "Landing pages para clínicas odontológicas",
-  url: "https://octopaginas.com.br",
+  url: "https://octo-labs.vercel.app",
   whatsapp: {
-    number: "5511999999999",
-    displayNumber: "(11) 99999-9999",
+    number: "555481050464",
+    displayNumber: "(54) 8105-0464",
     defaultMessage:
       "Olá! Vim pelo site da Octo Páginas e quero saber mais sobre os planos.",
   },
-  email: "contato@octopaginas.com.br",
   social: {
     instagram: "https://instagram.com/octopaginas",
     linkedin: "https://linkedin.com/company/octolabs",
@@ -244,5 +243,4 @@ export const footer = {
   links: {
     privacy: "/privacidade",
   },
-  legal: "Octo Labs Tecnologia Ltda. — CNPJ 00.000.000/0001-00",
 };

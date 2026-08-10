@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { site } from "@/lib/content";
+import { site, whatsappLink } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade",
@@ -44,9 +44,14 @@ export default function PrivacidadePage() {
         <section>
           <h2 className="text-lg font-semibold text-petrol-950">Contato</h2>
           <p className="mt-2">
-            Dúvidas sobre esta política podem ser enviadas para{" "}
-            <a href={`mailto:${site.email}`} className="text-petrol-700 underline">
-              {site.email}
+            Dúvidas sobre esta política podem ser enviadas pelo{" "}
+            <a
+              href={whatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-petrol-700 underline"
+            >
+              WhatsApp da {site.brand}
             </a>
             .
           </p>
