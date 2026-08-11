@@ -100,10 +100,7 @@ plataforma compatível (ex.: Vercel). Antes de publicar, atualize:
 ### Imagem de Open Graph
 
 A imagem usada nos previews de compartilhamento (WhatsApp, Instagram,
-Twitter/X etc.) é gerada automaticamente pelo Next.js a partir de
-[`app/opengraph-image.tsx`](app/opengraph-image.tsx) e
-[`app/twitter-image.tsx`](app/twitter-image.tsx) (ambos reaproveitam o
-layout definido em [`lib/ogImage.tsx`](lib/ogImage.tsx)). Não é um arquivo
-estático — ela é renderizada sob demanda em `/opengraph-image` e sobe
-automaticamente a cada deploy, sem precisar subir nenhum PNG manualmente.
-Para mudar o visual do preview, edite `lib/ogImage.tsx`.
+Twitter/X etc.) é o arquivo estático [`public/og-image.png`](public/og-image.png)
+(1200×630), referenciado em `openGraph.images` e `twitter.images` no
+[`app/layout.tsx`](app/layout.tsx). Para trocar a imagem, basta substituir
+esse arquivo por outro do mesmo tamanho.
