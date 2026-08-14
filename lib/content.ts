@@ -7,8 +7,8 @@ export const site = {
   tagline: "Landing pages para clínicas odontológicas",
   url: "https://octo-labs.vercel.app",
   whatsapp: {
-    number: "555481050464",
-    displayNumber: "(54) 8105-0464",
+    number: "555494058603",
+    displayNumber: "+55 54 9405-8603",
     defaultMessage:
       "Olá! Vim pelo site da Octo Páginas e quero saber mais sobre os planos.",
   },
@@ -48,7 +48,7 @@ export const hero = {
 };
 
 export const painPoints = {
-  title: "Cada dia sem uma página boa é agenda vazia",
+  title: "Cada dia sem uma página otimizada é receita perdida",
   subtitle:
     "Se você já investe em anúncio, o problema não é falta de interessado — é o que acontece depois do clique.",
   items: [
@@ -84,7 +84,7 @@ export const howItWorks = {
       number: "02",
       title: "Criamos sua página em 48h",
       description:
-        "Nosso time monta a landing page com produção acelerada por IA, já pensada para converter visita em agendamento.",
+        "Nosso time desenvolve e estrutura a landing page da sua clínica, otimizada para converter visitantes em agendamentos.",
     },
     {
       number: "03",
