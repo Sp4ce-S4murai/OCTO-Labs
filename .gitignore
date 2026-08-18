@@ -25,3 +25,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# arquivos movidos aqui por não poderem ser deletados via bridge remota — não versionar
+/_to_delete/
