@@ -16,24 +16,16 @@ export const metadata: Metadata = {
     template: `%s — ${site.brand}`,
   },
   description:
-    "Criamos e mantemos a landing page da sua clínica odontológica. No ar em 48h, preço fixo mensal, suporte incluso. Um produto Octo Labs.",
-  keywords: [
-    "landing page para dentista",
-    "site para clínica odontológica",
-    "landing page odontologia",
-    "marketing para dentistas",
-    "página de captura odontologia",
-  ],
-  authors: [{ name: site.parentBrand }],
-  creator: site.parentBrand,
+    "Octo Labs é uma fábrica de produtos digitais. Conheça nossos produtos e fale com a gente.",
+  authors: [{ name: site.brand }],
+  creator: site.brand,
   openGraph: {
     type: "website",
     locale: "pt_BR",
     url: site.url,
     siteName: site.brand,
     title: `${site.brand} — ${site.tagline}`,
-    description:
-      "Pare de perder paciente por falta de uma página profissional. Criação e manutenção mensal de landing pages para clínicas odontológicas.",
+    description: "Octo Labs é uma fábrica de produtos digitais.",
     images: [
       {
         url: "/og-image.png",
@@ -46,8 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${site.brand} — ${site.tagline}`,
-    description:
-      "Pare de perder paciente por falta de uma página profissional. Criação e manutenção mensal de landing pages para clínicas odontológicas.",
+    description: "Octo Labs é uma fábrica de produtos digitais.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -56,63 +47,14 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: site.brand,
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Web",
-    description:
-      "Criação e manutenção mensal de landing pages para clínicas odontológicas, com hospedagem e suporte inclusos.",
-    offers: [
-      {
-        "@type": "Offer",
-        name: "Plano Essencial",
-        price: "147",
-        priceCurrency: "BRL",
-        priceSpecification: {
-          "@type": "UnitPriceSpecification",
-          price: "147",
-          priceCurrency: "BRL",
-          billingIncrement: 1,
-          unitCode: "MON",
-        },
-      },
-      {
-        "@type": "Offer",
-        name: "Plano Profissional",
-        price: "297",
-        priceCurrency: "BRL",
-        priceSpecification: {
-          "@type": "UnitPriceSpecification",
-          price: "297",
-          priceCurrency: "BRL",
-          billingIncrement: 1,
-          unitCode: "MON",
-        },
-      },
-    ],
-    brand: {
-      "@type": "Brand",
-      name: site.parentBrand,
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: site.brand,
-    parentOrganization: {
-      "@type": "Organization",
-      name: site.parentBrand,
-    },
-    description:
-      "Produto da Octo Labs especializado em landing pages para clínicas odontológicas.",
-    telephone: `+${site.whatsapp.number}`,
-    url: site.url,
-    areaServed: "BR",
-  },
-];
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: site.brand,
+  description: "Fábrica de produtos digitais.",
+  telephone: `+${site.whatsapp.number}`,
+  url: site.url,
+};
 
 export default function RootLayout({
   children,

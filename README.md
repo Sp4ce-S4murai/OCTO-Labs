@@ -1,7 +1,13 @@
-# Octo Páginas
+# Octo Labs
 
-Landing page do produto **Octo Páginas** (Octo Labs) — criação e manutenção
-mensal de landing pages para clínicas odontológicas.
+Boilerplate institucional da **Octo Labs** — fábrica de produtos digitais.
+
+> Este repo já está no ar na Vercel (`octo-labs.vercel.app`) e é usado como
+> ambiente de teste, por isso ficou reservado para o site institucional da
+> holding. O produto que vai a mercado primeiro — **Octo Páginas**,
+> landing pages para clínicas odontológicas — foi movido para um repo
+> separado ("OctoPaginas"), que também precisa de um projeto Vercel
+> próprio quando for publicado de verdade.
 
 ## Stack
 
@@ -20,87 +26,46 @@ npm run dev
 
 Acesse [http://localhost:3000](http://localhost:3000).
 
-Outros comandos úteis:
-
-```bash
-npm run build   # build de produção
-npm run start   # roda o build de produção localmente
-npm run lint    # checagem de lint
-```
-
 ## Onde editar o conteúdo
 
-Praticamente todo o texto, preço e depoimento do site fica centralizado em
-[`lib/content.ts`](lib/content.ts). Para trocar qualquer informação (preços,
-headline, depoimentos, perguntas do FAQ, número de WhatsApp, links de redes
-sociais etc.) edite esse arquivo — não é necessário mexer nos componentes.
-
-Principais blocos do arquivo:
+Todo o texto e link do site fica centralizado em
+[`lib/content.ts`](lib/content.ts):
 
 | Export | O que controla |
 | --- | --- |
 | `site` | Marca, WhatsApp e redes sociais |
 | `hero` | Headline, subheadline e CTAs do topo |
-| `painPoints` | Bullets de dor/problema |
-| `howItWorks` | Passos do "como funciona" |
-| `pricing` | Planos, preços e features |
-| `testimonials` | Depoimentos e métricas |
-| `about` | Bloco "sobre / Octo Labs" |
-| `faq` | Perguntas frequentes |
-| `ctaFinal` | Textos da seção final de contato |
-| `footer` | Textos do rodapé |
+| `products` | Lista de produtos da Octo Labs (hoje só o Octo Páginas) |
+| `footer` | Texto do rodapé |
 
 ## Estrutura de pastas
 
 ```
 app/
-  layout.tsx        # layout raiz, metadata, Open Graph, schema.org
-  page.tsx           # monta a página juntando todas as seções
-  privacidade/        # página de política de privacidade
-  api/contact/route.ts  # endpoint (mock) que recebe o lead do formulário
+  layout.tsx        # layout raiz, metadata, Open Graph, schema.org Organization
+  page.tsx           # Header + Hero + Produtos + Contato + Footer
   sitemap.ts, robots.ts, manifest.ts  # SEO técnico
 components/
-  Header.tsx, Hero.tsx, PainPoints.tsx, HowItWorks.tsx,
-  Pricing.tsx, PricingCard.tsx, Testimonials.tsx, About.tsx,
-  Faq.tsx, FaqAccordion.tsx, ContactForm.tsx, CtaFinal.tsx,
-  Footer.tsx, Logo.tsx
+  Header.tsx, Hero.tsx, Products.tsx, Contact.tsx, Footer.tsx, Logo.tsx
 lib/
   content.ts          # conteúdo centralizado do site
 ```
 
-## Formulário de lead
-
-O formulário da seção final (`components/ContactForm.tsx`) envia os dados
-para `app/api/contact/route.ts`, que hoje apenas valida o payload e loga o
-lead no console (`app/api/contact/route.ts`).
-
-Para conectar a um serviço real, edite o bloco marcado com `TODO` nesse
-arquivo e plugue, por exemplo:
-
-- **[Resend](https://resend.com/docs/send-with-nextjs)** — para enviar um
-  e-mail transacional a cada novo lead;
-- **[Formspree](https://formspree.io/)** — trocando a rota mockada pelo
-  endpoint do Formspree;
-- **Webhook para WhatsApp** (Meta Cloud API, Twilio, Z-API, etc.) — para
-  disparar uma mensagem automática assim que o lead chegar.
-
-O contrato de entrada (`{ name, clinic, whatsapp, message }`) e saída
-(`{ ok: boolean, error?: string }`) já está pronto, então a integração real
-não exige mudanças no formulário nem no restante do site.
+Este boilerplate não tem formulário de captura de lead — só um CTA de
+WhatsApp. Se um dia esse site passar a coletar dado de visitante (form,
+newsletter etc.), volte a adicionar uma política de privacidade (LGPD).
 
 ## Deploy
 
-O projeto é um app Next.js padrão e pode ser publicado em qualquer
-plataforma compatível (ex.: Vercel). Antes de publicar, atualize:
+Este repo já é o que está publicado em `octo-labs.vercel.app`. Antes de
+tratar como institucional "de verdade", atualize em `lib/content.ts`:
 
-- `site.url` em `lib/content.ts` com o domínio final (hoje aponta para
-  `https://octo-labs.vercel.app`);
-- os dados de contato e redes sociais em `lib/content.ts`.
+- `site.social` — confirme se as contas de Instagram/LinkedIn existem;
+- `products` — mantenha a lista de produtos e o link de cada um
+  atualizados conforme forem publicados em domínios próprios.
 
 ### Imagem de Open Graph
 
-A imagem usada nos previews de compartilhamento (WhatsApp, Instagram,
-Twitter/X etc.) é o arquivo estático [`public/og-image.png`](public/og-image.png)
-(1200×630), referenciado em `openGraph.images` e `twitter.images` no
-[`app/layout.tsx`](app/layout.tsx). Para trocar a imagem, basta substituir
-esse arquivo por outro do mesmo tamanho.
+A imagem usada nos previews de compartilhamento é o arquivo estático
+[`public/og-image.png`](public/og-image.png) (1200×630), referenciado em
+`openGraph.images` e `twitter.images` no [`app/layout.tsx`](app/layout.tsx).

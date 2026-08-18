@@ -29,10 +29,10 @@ export function Header() {
 
         <div className="hidden md:block">
           <a
-            href="#planos"
+            href="#contato"
             className="inline-flex items-center justify-center rounded-full bg-coral-500 px-5 py-2.5 text-sm font-semibold text-white shadow-softer transition-colors hover:bg-coral-600"
           >
-            Ver planos
+            Falar no WhatsApp
           </a>
         </div>
 
@@ -61,11 +61,11 @@ export function Header() {
               </a>
             ))}
             <a
-              href="#planos"
+              href="#contato"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center rounded-full bg-coral-500 px-5 py-3 text-base font-semibold text-white shadow-softer hover:bg-coral-600"
             >
-              Ver planos
+              Falar no WhatsApp
             </a>
           </nav>
         </div>
