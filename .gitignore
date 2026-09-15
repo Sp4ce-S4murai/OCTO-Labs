@@ -5,3 +5,9 @@ Thumbs.db
 
 # arquivos movidos aqui por não poderem ser deletados via bridge remota — não versionar
 /_to_delete/
+
+# documentos comerciais — contrato, propostas e afins ficam locais.
+# São modelo de negócio e trazem dado de cliente; não versionar.
+*.docx
+*.xlsx
+*.pdf
